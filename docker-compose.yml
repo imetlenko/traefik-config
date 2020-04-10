@@ -31,7 +31,6 @@ services:
       - traefik.http.routers.nodejs.rule=Host(`localhost`) && Path(`/node`)
       - traefik.http.routers.nodejs.entrypoints=web,websecure
       - traefik.http.routers.nodejs.tls=true
-      # - traefik.http.routers.nodejs.tls.certresolver=leresolver
     ports:
       - "9000:9000"
     networks:
