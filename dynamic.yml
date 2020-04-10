@@ -1,0 +1,34 @@
+http:
+  middlewares:
+    test-redirectscheme:
+      redirectScheme:
+        scheme: https
+        permanent: true
+  routers:
+    my-router:
+      rule: "Path(`/foo`)"
+      service: service-foo
+
+
+tls:
+  stores:
+    default:
+      defaultCertificate:
+        certFile: /etc/traefik/cert/server.crt
+        keyFile: /etc/traefik/cert/server.key
+# tls:
+#   certResolver: leresolver
+#   stores:
+#     default: {}
+
+#
+
+# acme:
+#   tlsChallenge: true
+#   email: 'juri.kostik@gmail.com'
+#   storage: '/etc/traefik/acme.json'
+#   entryPoint: 'https'
+#   caserver: 'https://acme-staging-v02.api.letsencrypt.org/directory'
+  # onHostRule: true
+  # httpChallenge:
+  #   entryPoint: http
